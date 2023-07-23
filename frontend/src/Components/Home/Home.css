@@ -1,0 +1,368 @@
+.Homes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    background: url("../../../src/assets/images/home.jpg") no-repeat center bottom/cover;
+    border-radius: 50px;
+    position: relative;
+}
+
+.skills {
+
+    min-height: 100%;
+    background: url("../../../src/assets/images/skills.jpg") no-repeat center bottom/cover;
+    border-radius: 50px;
+    margin: 7.5% 0%;
+}
+
+.projects {
+    max-height: 200%;
+    height: auto;
+    background: url("../../../src/assets/images/projects.jpg") no-repeat center center/cover;
+    border-radius: 50px;
+    margin: 7.5% 0%;
+    overflow-y: auto;
+}
+
+.projects-set {
+    overflow: hidden;
+}
+
+.projects h1 {
+    text-align: center;
+    color: var(--text-color);
+    padding: 1rem 0rem;
+}
+
+.contact {
+    height: 100%;
+    background: url("../../../src/assets/images/contact.jpg") no-repeat center bottom/cover;
+    border-radius: 50px;
+    margin: 7.5% 0%;
+
+}
+
+
+.title {
+    font-weight: bold !important;
+}
+
+.skills-set {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.skills-card {
+    width: 10vmax;
+    min-width: 150px;
+    color: var(--text-color);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 2rem;
+    cursor: default;
+}
+
+
+
+.projects-set {
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+
+
+.project-card figure {
+    width: 15rem;
+    min-width: 200px;
+}
+
+.project-card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projects-set {
+    display: flex;
+    justify-content: left;
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.project-card {
+    background-color: white;
+    margin: 1rem 0rem;
+    border-radius: 15px;
+    padding: 2rem;
+
+}
+
+.project-technologies ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-margin {
+    margin: .4rem 0rem;
+    width: auto;
+}
+
+.project-technologies ul li {
+    margin-inline: 1rem;
+}
+
+.project-card {
+    display: flex;
+    /* align-items: center; */
+    transition: all 0.5s;
+}
+
+.skills-card h3 {
+    text-align: center;
+}
+
+.skills-card img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.project-details {
+    margin-inline: 1rem;
+}
+
+.skills-card figure {
+    min-height: 120px;
+}
+
+.avatar-image {
+    width: 20rem !important;
+    height: 20rem !important;
+    animation: left-right 3s infinite alternate ease-in-out;
+    object-fit: cover;
+    border-radius: 100%;
+
+}
+
+.skills-title {
+    text-align: center;
+    color: var(--text-color);
+    padding: 1rem 0rem;
+}
+
+.project-card {
+    background-color: white;
+    min-width: 100%;
+    cursor: default;
+}
+
+.project-links {
+    margin: 1rem 0rem;
+}
+
+.project-links a:last-child {
+    margin-left: 1.1rem;
+
+}
+
+.project-links a:first-child {
+    background-color: blue;
+    color: white;
+    padding: .3rem 1rem;
+    border: none;
+    border-radius: 100vmax;
+}
+
+.about {
+    color: var(--text-color);
+    margin: 0rem 1.1rem;
+}
+
+.about a {
+    padding: .5rem 1.1rem;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--text-color);
+    color: white;
+    margin: 1rem 0rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+
+}
+
+.contact h1 {
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem 0rem;
+
+}
+
+.contact-content {
+    width: 100%;
+    height: 89%;
+    display: flex;
+}
+
+.contact-content form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    max-width: 500px;
+    height: 80%;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 5px 10px 10px rgb(235, 235, 235);
+
+}
+
+.email-name {
+    display: flex;
+    width: 100%;
+}
+
+.contact-content form input,
+.contact-content textarea {
+    margin: .3rem;
+    font-size: 1rem;
+    padding: .3rem 1rem;
+    outline: none;
+}
+
+textarea {
+    width: auto !important;
+}
+
+.contact-content form input[type="submit"] {
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    border-radius: 100vmax;
+    padding: .7rem 0rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.email-name input {
+    width: 100%;
+
+}
+
+@keyframes left-right {
+
+    100% {
+        filter: drop-shadow(5px 5px 5px gray);
+        transform: translateX(5px) translateX(5px);
+
+    }
+
+    0% {
+        filter: drop-shadow(0 0 0 gray);
+        transform: translateX(0px) translateX(0px);
+    }
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+    .Homes {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .avatar-image {
+        margin: 2rem 0rem;
+        width: 10rem !important;
+        height: 10rem !important;
+        border-radius: 100%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .about {
+        font-size: .88rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-card ul {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .email-name {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    .skills-card {
+        width: 50px;
+        margin: 10px;
+    }
+
+    .skills-card figure img {
+        width: 70px;
+    }
+
+    .skills-card figure {
+        text-align: center;
+        min-height: 100px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 430px) {
+    .project-card figure img {
+        width: 10rem;
+    }
+
+
+
+    .project-card {
+        font-size: .9rem;
+        padding: .2rem;
+    }
+
+    .skills-card {
+        width: 30px;
+        margin: 10px;
+        padding: .5rem;
+    }
+
+    .skills-card figure img {
+        width: 50px;
+    }
+
+    .skills-card h3 {
+        font-size: .9rem;
+    }
+
+    .skills-card figure {
+        text-align: center;
+        min-height: 60px;
+    }
+
+}
