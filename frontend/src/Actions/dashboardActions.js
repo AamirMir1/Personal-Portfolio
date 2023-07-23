@@ -19,7 +19,7 @@ export const addProject = ({ title, techStack, description, demoUrl, github, thu
         }
 
         dispatch({ type: "addProjectRequest" })
-        const { data } = await axios.post("http://localhost:5000/project/create", userData, config)
+        const { data } = await axios.post("/project/create", userData, config)
         dispatch({ type: "addProjectSuccess", payload: data.message })
     } catch (error) {
         dispatch({ type: "addProjectFailure", payload: error.response.data.message })
@@ -38,7 +38,7 @@ export const addSkills = ({ name, image }) => async (dispatch) => {
         }
 
         dispatch({ type: "addSkillsRequest" })
-        const { data } = await axios.post("http://localhost:5000/skill/add", userData, config)
+        const { data } = await axios.post("/skill/add", userData, config)
         dispatch({ type: "addSkillsSuccess", payload: data.message })
     } catch (error) {
         dispatch({ type: "addSkillsFailure", payload: error.response.data.message })
@@ -59,7 +59,7 @@ export const updateProfile = ({ name, email, avatar, title }) => async (dispatch
         }
 
         dispatch({ type: "updateProfileRequest" })
-        const { data } = await axios.post("http://localhost:5000/profile/update", userData, config)
+        const { data } = await axios.post("/profile/update", userData, config)
         dispatch({ type: "updateProfileSuccess", payload: data.message })
     } catch (error) {
         dispatch({ type: "updateProfileFailure", payload: error.response.data.message })
@@ -80,7 +80,7 @@ export const updatePassword = ({ oldPassword, newPassword, confirmPassword }) =>
         }
 
         dispatch({ type: "updatePasswordRequest" })
-        const { data } = await axios.put("http://localhost:5000/password/update", userData, config)
+        const { data } = await axios.put("/password/update", userData, config)
         dispatch({ type: "updatePasswordSuccess", payload: data.message })
     } catch (error) {
         dispatch({ type: "updatePasswordFailure", payload: error.response.data.message })
@@ -89,7 +89,7 @@ export const updatePassword = ({ oldPassword, newPassword, confirmPassword }) =>
 export const logout = () => async (dispatch) => {
     try {
         dispatch({ type: "logoutRequest" })
-        const { data } = await axios.post("http://localhost:5000/logout")
+        const { data } = await axios.post("/logout")
         dispatch({ type: "logoutSuccess", payload: data.message })
     } catch (error) {
         dispatch({ type: "logoutFailure", payload: error.response.data.message })

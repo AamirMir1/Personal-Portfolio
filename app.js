@@ -26,7 +26,7 @@ connectDatabase()
 app.use(express.urlencoded({ extended: false, limit: "10mb" }))
 app.use(express.json({ limit: "10mb" }))
 app.use(cookieParser())
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }))
+app.use(cors({ credentials: true }))
 
 // Routes
 app.use(userRoute)
