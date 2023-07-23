@@ -85,7 +85,10 @@ const Home = () => {
     return <> <div className="Homes">
         <div className="about">
             <h3>
-                <Typewriter words={[`Hey, I am ${data?.about && data.about.name}`]} />
+                {
+                    data?.about && <Typewriter words={[`Hey, I am ${data.about.name}`]} />
+                }
+
             </h3>
             <h1 className='title'>
                 I Am A Self Taught <br /> {data?.about && data.about.title}
@@ -95,7 +98,9 @@ const Home = () => {
             </a>
         </div>
         <div className="image">
-            <img className='avatar-image' src={data?.about && data.about.avatar.url} alt='My Image' />
+            {
+                data?.about && <img className='avatar-image' src={data.about.avatar.url} alt='My Image' />
+            }
         </div>
     </div>
         <div id='skills' className="skills">
