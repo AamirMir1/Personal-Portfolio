@@ -20,7 +20,7 @@ const Home = () => {
         userMessage: ""
     })
     const { loading, message, error } = useSelector((state) => state.sendContact)
-    const { data } = useSelector((state) => state.getUserData)
+    const { data, loading: getUserDataLoading } = useSelector((state) => state.getUserData)
     const { loading: deleteProjectLoading, message: deleteProjectMessage, error: deleteProjectError } = useSelector((state) => state.deleteProject)
 
     useEffect(() => {
@@ -82,7 +82,7 @@ const Home = () => {
     const deleteProjects = (id) => {
         dispatch(deleteProject(id))
     }
-    return loadUserLoading ? <div className='Loader'>
+    return loadUserLoading || getUserDataLoading ? <div className='Loader'>
         <img src={LoadingGif} alt='Loading...' />
     </div> : <> <div className="Homes">
         <div className="about">
