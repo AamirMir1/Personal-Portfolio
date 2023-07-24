@@ -8,10 +8,10 @@ import { useAlert } from 'react-alert'
 import { IconButton } from '@mui/material'
 import { DeleteForever } from '@mui/icons-material'
 import { deleteSkill } from '../../Actions/userActions'
-
+import LoadingGif from '../../assets/images/yy3.gif'
 const Home = () => {
     const dispatch = useDispatch()
-    const { isAuthenticated } = useSelector((state) => state.loadUser)
+    const { isAuthenticated, loading: loadUserLoading } = useSelector((state) => state.loadUser)
     const alert = useAlert()
     const { message: skillDeleteMessage, error: skillDeleteError, loading: skillDeleteLoading } = useSelector((state) => state.deleteSkill)
     const [contactDetails, setContactDetails] = useState({
@@ -82,7 +82,9 @@ const Home = () => {
     const deleteProjects = (id) => {
         dispatch(deleteProject(id))
     }
-    return <> <div className="Homes">
+    return loadUserLoading ? <div className='Loader'>
+        <img src={LoadingGif} alt='Loading...' />
+    </div> : <> <div className="Homes">
         <div className="about">
             <h3>
                 {
