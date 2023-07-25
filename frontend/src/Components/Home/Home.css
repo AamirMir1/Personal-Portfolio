@@ -269,6 +269,8 @@ textarea {
     cursor: pointer;
 }
 
+
+
 .email-name input {
     width: 100%;
 
@@ -311,6 +313,15 @@ textarea {
         text-align: center;
     }
 }
+
+
+@media screen and (max-width: 430px) {
+    .skills-set {
+        width: 100%;
+    }
+}
+
+
 
 @media screen and (max-width: 800px) {
     .project-card {
@@ -379,4 +390,10 @@ textarea {
         min-height: 60px;
     }
 
+}
+
+@media screen and (max-width: 378px) {
+    .skills-card {
+        width: 15rem;
+    }
 }
