@@ -140,7 +140,7 @@ exports.logout = catchAsyncErrors((req, res, next) => {
 
 exports.createProject = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user._id)
-    const { title, techStack, description, demoUrl, keyFeatures, github, thumbnail } = req.body;
+    const { title, techStack, description, demoUrl, adminEmail, adminPassword, keyFeatures, github, thumbnail } = req.body;
     if (!title || !techStack || !description || !demoUrl || !keyFeatures || !thumbnail) {
         return next(new ErrorHandler("Please fill required fields", 400))
     }
@@ -156,6 +156,8 @@ exports.createProject = catchAsyncErrors(async (req, res, next) => {
         demoUrl,
         github,
         keyFeatures,
+        adminEmail,
+        adminPassword,
         thumbnail: {
             public_id: myCloud.public_id,
             url: myCloud.secure_url
@@ -196,7 +198,7 @@ exports.deleteProject = catchAsyncErrors(async (req, res, next) => {
 exports.addSkill = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user._id)
 
-    if (!req.body.name || !req.body.image) {
+    if (!req.body.name || !req.body.image || !req.body.experience) {
         return next(new ErrorHandler("Please fill all the fields", 400))
     }
 
@@ -209,7 +211,8 @@ exports.addSkill = catchAsyncErrors(async (req, res, next) => {
             public_id: myCloud.public_id,
             url: myCloud.secure_url
         },
-        name: req.body.name
+        name: req.body.name,
+        experience: req.body.experience
     })
     await user.save()
     res.status(200).json({

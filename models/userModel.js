@@ -37,6 +37,12 @@ const userSchema = new mongoose.Schema({
                     type: String,
                 }
             },
+            adminEmail: {
+                type: String
+            },
+            adminPassword: {
+                type: String
+            },
             title: {
                 type: String,
             },
@@ -89,6 +95,14 @@ const userSchema = new mongoose.Schema({
             },
             name: {
                 type: String,
+            },
+            experience: {
+                type: Number,
+                validate: (value)=>{
+                   if(value > 100){
+                    return new Error("Experience must be less than 100")
+                   }
+                }
             }
         }
     ],

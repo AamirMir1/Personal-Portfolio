@@ -7,7 +7,12 @@
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth !important;
 }
-
+html, body,input[type="text"], input[type="email"], textarea{
+  cursor: url("assets/images/cursor.png"), auto;
+}
+button, a, .project-card, input[type="submit"], .account img {
+    cursor: url("assets/images/handcursor.png"), auto !important; 
+}
 :root {
     --bg-color: rgb(64, 64, 64);
     --text-color: rgb(0, 0, 80);

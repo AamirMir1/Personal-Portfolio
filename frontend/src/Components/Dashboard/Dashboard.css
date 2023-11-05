@@ -1,8 +1,13 @@
 .Dashboard {
     display: grid;
     grid-template-columns: 5fr 1fr;
+    overflow-y: auto;
+    height: 100%;
 }
 
+.dashboard-content {
+   height: 100%;
+}
 .dashboard-content h1 {
     text-align: center;
     color: var(--text-color);

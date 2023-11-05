@@ -1,7 +1,7 @@
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 
-export const addProject = ({ title, techStack, description, demoUrl, github, thumbnail, keyFeatures }) => async (dispatch) => {
+export const addProject = ({ title, techStack, description, demoUrl, github, thumbnail, keyFeatures, adminEmail, adminPassword }) => async (dispatch) => {
     try {
         const userData = {
             title,
@@ -10,7 +10,9 @@ export const addProject = ({ title, techStack, description, demoUrl, github, thu
             demoUrl,
             github,
             thumbnail,
-            keyFeatures
+            keyFeatures,
+            adminEmail, 
+            adminPassword
         }
         const config = {
             headers: {
@@ -25,11 +27,12 @@ export const addProject = ({ title, techStack, description, demoUrl, github, thu
         dispatch({ type: "addProjectFailure", payload: error.response.data.message })
     }
 }
-export const addSkills = ({ name, image }) => async (dispatch) => {
+export const addSkills = ({ name, image, experience }) => async (dispatch) => {
     try {
         const userData = {
             name,
-            image
+            image,
+            experience
         }
         const config = {
             headers: {
