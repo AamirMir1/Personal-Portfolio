@@ -8,10 +8,14 @@ import {
   getUserDetails,
   sendContact,
 } from "../../Actions/userActions";
+
 import { useAlert } from "react-alert";
 import { IconButton, LinearProgress } from "@mui/material";
 import { DeleteForever } from "@mui/icons-material";
 import { deleteSkill } from "../../Actions/userActions";
+
+import whatsapp from "../../assets/images/whatsapp.png";
+
 import LoadingGif from "../../assets/images/yy3.gif";
 const Home = () => {
   const dispatch = useDispatch();
@@ -276,7 +280,20 @@ const Home = () => {
       <div id="contact" className="contact">
         <div className="contact-content">
           <form action="" onSubmit={handleContact}>
-            <h1>Contact Me</h1>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: ".6rem .6rem",
+              }}
+            >
+              <h1>Contact Me</h1>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <img width={"50px"} src={whatsapp} />{" "}
+                <span style={{ color: "black" }}>+923554138681</span>
+              </div>
+            </div>
             <div className="email-name">
               <input
                 name="userName"
