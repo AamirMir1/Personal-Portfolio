@@ -8,6 +8,7 @@ import {
   getUserDetails,
   sendContact,
 } from "../../Actions/userActions";
+import { motion } from "framer-motion";
 
 import { useAlert } from "react-alert";
 import { IconButton, LinearProgress } from "@mui/material";
@@ -154,7 +155,11 @@ const Home = () => {
           {data && data?.projects && data.projects.length > 0
             ? data.projects.map((project) => {
                 return (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0.3, x: -20, scale: 1 }} // Initial state: hidden and translated to the left
+                    whileHover={{ scale: 1.02 }}
+                    whileInView={{ opacity: 1, x: 0 }} // In view: visible and centered
+                    transition={{ duration: 0.3, ease: "easeIn" }} // Transition settings
                     key={project._id}
                     onClick={() => showProject(project.demoUrl)}
                     style={{ position: "relative" }}
@@ -191,7 +196,7 @@ const Home = () => {
                       {project?.adminEmail && project?.adminPassword && (
                         <p className="project-description d-margin">
                           <strong style={{ marginRight: "5px" }}>
-                            <i>Admin Account: </i>
+                            <i>Admin Panel Account: </i>
                           </strong>{" "}
                           {"  "} <strong>Email:</strong> {project.adminEmail}{" "}
                           <strong style={{ marginLeft: "5px" }}>
@@ -228,7 +233,7 @@ const Home = () => {
                         </IconButton>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })
             : null}
@@ -240,7 +245,10 @@ const Home = () => {
           {data && data?.skills && data.skills.length
             ? data.skills.map((skill) => {
                 return (
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }} // Initial state: hidden and translated to the left
+                    whileInView={{ opacity: 1, x: 0 }} // In view: visible and centered
+                    transition={{ duration: 0.4, ease: "easeOut" }} // Transition settings
                     key={skill._id}
                     style={{ position: "relative" }}
                     className="skills-card"
@@ -271,7 +279,7 @@ const Home = () => {
                         <DeleteForever />
                       </IconButton>
                     )}
-                  </div>
+                  </motion.div>
                 );
               })
             : null}
@@ -288,10 +296,12 @@ const Home = () => {
                 padding: ".6rem .6rem",
               }}
             >
-              <h1>Contact Me</h1>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <img width={"50px"} src={whatsapp} />{" "}
-                <span style={{ color: "black" }}>+923554138681</span>
+              <div className="contact-div">
+                <h1>Contact Me</h1>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img className="whatsapp-png" src={whatsapp} />{" "}
+                  <span style={{ color: "black" }}>+923554138681</span>
+                </div>
               </div>
             </div>
             <div className="email-name">
