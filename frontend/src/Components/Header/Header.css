@@ -80,51 +80,16 @@
   border-radius: 0.5rem;
 }
 
-/* @media screen and (max-width: 650px) {
-  .Header {
-    display: none;
-
-    background-color: white;
-    height: 18rem;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    position: absolute;
-    width: 100%;
-    border-bottom: none;
-  }
-
-  nav ul {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .social-media-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .avatar {
-    margin: 3rem auto 0rem auto;
-  }
-} */
-
 @media screen and (max-width: 530px) {
-  .Header .css-1wlk0hk-MuiAvatar-root {
-    width: 25px;
-    height: 25px;
+  .Header .avatar {
+    width: 31px;
+    height: 31px;
   }
   .Header ul a {
     padding: 0.4rem 0.1rem;
   }
-  .Header .css-78trlr-MuiButtonBase-root-MuiIconButton-root {
-    padding: 3px !important;
+  .Header .icon-button {
+    padding: 3px;
   }
 }
 @media screen and (max-width: 430px) {
@@ -136,8 +101,12 @@
   .Header ul a {
     font-size: 1rem;
   }
-  .Header .css-i4bv87-MuiSvgIcon-root {
+  .Header .social-media-links {
     font-size: 1.2rem;
+  }
+  .Header .avatar {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -155,6 +124,6 @@
 }
 @media screen and (min-width: 651px) {
   .Header {
-    display: flex !important;
+    display: flex;
   }
 }

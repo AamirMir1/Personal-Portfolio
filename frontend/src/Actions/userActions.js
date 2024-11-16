@@ -1,5 +1,7 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:5000";
+
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: "loadUserRequest" });

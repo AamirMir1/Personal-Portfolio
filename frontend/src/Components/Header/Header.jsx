@@ -63,6 +63,7 @@ const Header = () => {
             </IconButton> */}
 
           <IconButton
+            className="icon-button"
             onClick={() =>
               socialMediaHandler("https://www.instagram.com/lucifer72633")
             }
@@ -71,17 +72,18 @@ const Header = () => {
           </IconButton>
 
           <IconButton
+            className="icon-button"
             onClick={() => socialMediaHandler("https://github.com/AamirMir1")}
           >
             <GitHub className="social-media-links" />
           </IconButton>
         </div>
       </div>
-      <div className="burger" onClick={() => setToggleShow(!toggleShow)}>
+      {/* <div className="burger" onClick={() => setToggleShow(!toggleShow)}>
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
-      </div>
+      </div> */}
     </>
   );
 };
