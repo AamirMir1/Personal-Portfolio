@@ -300,7 +300,7 @@ const Home = () => {
                 <h1>Contact Me</h1>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <img className="whatsapp-png" src={whatsapp} />{" "}
-                  <span style={{ color: "black" }}>+923554138681</span>
+                  <span style={{ color: "black" }}>+923498955424</span>
                 </div>
               </div>
             </div>
